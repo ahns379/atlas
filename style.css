@@ -1,0 +1,821 @@
+*{
+  font-family: Open Sans;
+  padding: 0%;
+  margin: 0%;
+  /* margin-left: 5%; */
+}
+body {
+  overflow-x: hidden;
+}
+
+/* scroll down animation */
+.c-scrolldown {
+  width: 1px;
+  height: 60px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  }
+  .c-scrolldown .c-line {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient(to bottom, black 50%, rgba(0, 0, 0, 0) 50%);
+    background-position: 0 -60px;
+    background-size: 100% 200%;
+    animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+  }
+
+  @keyframes scrolldown {
+    0% {
+      background-position: 0 -60px;
+    }
+    75% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 60px;
+    }
+}
+
+/* back to top button */
+.back-to-top {
+  padding-left: 10px;
+  border: none;
+  text-decoration: underline;
+  background: none;
+  }
+  #button {
+    display: inline-block;
+    background-color: #ededed;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s,
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #button:active {
+    background-color: #555;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* clock */
+.clock {
+  position: absolute;
+  top: 55%; left: 18%;
+  width: 15rem; height: 15rem;
+  margin: -6rem 0 0 -6rem;
+  border: 0.05rem solid black;
+  z-index: 9999;
+  }
+  .hand {
+    position: absolute;
+    background-color: black;
+    transition: transform 0.5s ease;
+    transform-origin: 50% 100%;
+  }
+  .hour {
+    height: 20%; top: 30%;
+    left: 50%; width: 3px; margin-left: -1.5px;
+  }
+  .minute {
+    height: 30%; top: 20%;
+    left: 50%; width: 2px; margin-left: -1px;
+  }
+  .second {
+    height: 45%; top: 5%;
+    left: 50%; width: 1px; margin-left: -0.5px;
+}
+
+/* table of contents */
+.link-to-section {
+  font-size: 1em;
+  text-decoration: none;
+  color: black;
+  background-image: linear-gradient(180deg, transparent 90%, #000000);
+  background-repeat: no-repeat;
+  background-size: 0 100%;
+  transition: background-size .4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  }
+  .link-to-section:hover {
+    background-size: 100% 100%;
+    letter-spacing: 0.4em;
+  }
+
+  .tableofcontents_head{
+    margin-top: -30%;
+    margin-left: 60%;
+    text-decoration: none;
+  }
+
+  .tableofcontents{
+    padding-top: 15px;
+    font-size: 1em;
+}
+
+/* page1 */
+.backgrounda {
+  height: 100vh;
+  background-color: white;
+	background-size: 100%;
+	background-attachment:fixed;
+	position: relative;
+	overflow: hidden;
+  }
+  .title_page{
+    padding: 20%;
+    font-size: 5em;
+}
+
+.section {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.vertical-center {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical-center__inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.section--full {
+  padding: 0%;
+  margin: 0%;
+  text-align: center;
+
+}
+
+.section--full,
+.section--vertical {
+  padding: 0%;
+  margin: 0%;
+  min-height: 100vh;
+}
+
+/* .block-list {
+  white-space: nowrap;
+} */
+
+/* .block-list__item:first-child {
+  margin-left: 0;
+} */
+
+.chile_map{
+  position: fixed;
+  width: 30%;
+  margin-left: 20%;
+  margin-top: -50%;
+  z-index: -1;
+  opacity: 30%;
+}
+
+/* south america map */
+.south_america{
+  position: fixed;
+  z-index: -1;
+  margin-top: -50%;
+  margin-left: -25%;
+  }
+  #argentina_map{
+    margin-top: -66%;
+    margin-left: -39.5%;
+    transform: scale(1.18);
+  }
+  #bolivia_map{
+    margin-top: -84.9%;
+    margin-left: -39.5%;
+    transform: scale(1.19);
+  }
+  #brazil_map{
+    margin-top: -74.4%;
+    margin-left: -19.3%;
+    transform: scale(1.38);
+  }
+  #chile_map{
+    margin-top: -68.7%;
+    margin-left: -50.5%;
+    transform: scale(1.1);
+  }
+  #paraguay_map{
+    margin-top: -78%;
+    margin-left: -31.5%;
+    transform: scale(1.33);
+  }
+  #peru_map{
+    margin-top: -90.8%;
+    margin-left: -54.1%;
+    transform: scale(1.04);
+  }
+  #uraguay_map{
+    margin-top: -68.6%;
+    margin-left: -27.1%;
+    transform: scale(1.25);
+}
+
+.chile_box {
+  position: absolute;
+  width: 30%;
+  height: 100vh;
+  min-height: 600px;
+  display: inline-block;
+  background-color: rgba(225, 225, 225, 0.5);
+  z-index: -99999;
+}
+
+#cityname{
+  margin-left: 57%;
+  margin-top: 25%;
+  background: none;
+}
+
+#box1{
+  margin-left: 10%;
+}
+#box2{
+  margin-left: 112%;
+}
+
+.population_title{
+  margin-top: 15%;
+}
+/* nearby countries */
+.nearbycountries{
+  position: relative;
+  font-weight: normal;
+  font-size: 1em;
+  border-style: solid;
+  border-width: thin;
+  padding: 15px;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 70%;
+}
+
+.testing{
+  position: absolute;
+  margin-top: auto;
+}
+.south_america_testing{
+  transform: scale(1);
+  /* margin-top:  */
+  /* background-color: white; */
+}
+
+.testingtesting .list_label{
+  /* background-color: black; */
+  list-style: none;
+  float: left;
+  margin:10px;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  /* background: white; */
+  /* border-radius: 50%; */
+  /* position: relative; */
+  /* top: 50%; */
+  /* left: 10%; */
+  /* transition: .5s ease-in-out; */
+  /* z-index: 1; */
+  /* color: #ededed; */
+  }
+
+.countries_testing{
+
+  /* height: 100%; */
+  /* margin: auto; */
+  /* text-align: center; */
+  /* margin-top: 30%; */
+}
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+  font-family: "Roboto", sans-serif;
+} */
+.hovergallery-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3%;
+ }
+
+.hovergallery-flex-column {
+  /* flex: 50%; */
+  max-width: 50%;
+  /* padding: 9px; */
+}
+
+.hovergallery-flex-column img{
+  vertical-align: middle;
+  width: 100%;
+  background-color: rgb(0, 0, 0, .1);
+  transform: scale(5);
+ }
+
+.hovergallery-img {
+  margin-bottom: 20px;
+  padding-bottom: 0px !important;
+ }
+
+.hovergallery-content-main {
+  padding: 35px;
+}
+
+.hovergallery-hover-text {
+  position: relative;
+  overflow: hidden;
+  color: black;
+  text-align: left;
+  font-size: 16px;
+}
+
+.hovergallery-hover-text * {
+  transition: all 0.45s ease; }
+
+.hovergallery-hover-text p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  opacity: 0;
+  transform: translateY(-100%);
+  font-weight: 400;
+}
+.hovergallery-hover-text:hover >img {
+  opacity: .8;
+  background-color: rgb(0, 0, 0, .2);
+}
+.hovergallery-hover-text:hover p {
+  transform: translateY(0);
+  opacity: 1;
+  text-align: center;
+}
+
+
+.header{
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+.chile_text{
+  padding: 5%;
+  white-space: pre-wrap;
+}
+
+.white_break{
+  position: relative;
+  background-color: white;
+  height: 100%;
+  z-index: 1;
+}
+
+.title{
+  padding-top: 5%;
+  padding-left: 5%;
+
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8%;
+}
+
+/* population age */
+.population_age_gender{
+  width: 50%;
+}
+
+/* religion groups */
+.religion:hover{
+  opacity: 30%;
+  }
+  #protestant{
+    margin-top: -1.2%;
+  }
+  #jehovah{
+    margin-top: -1.15%;
+    margin-left: 45%;
+  }
+  #other_religion{
+    margin-top: -1.18%;
+    margin-left: 46.816%;
+  }
+  #no_religion{
+    margin-top: -1.2%;
+}
+
+/* ethnic groups */
+.ethnic:hover{
+  opacity: 30%;
+  }
+  #white{
+    margin-top: -1.2%;
+  }
+  #mapuche{
+    margin-top: -1.18%;
+  }
+  #aymara{
+    margin-top: -1.2%;
+    margin-left: 55.7%;
+  }
+  #other{
+    margin-top: -1.2%;
+    margin-right: 41.35%;
+}
+
+.us_chile_title{
+  text-align: left;
+  padding-left: 5%;
+  margin-top: 20%;
+}
+
+#us_chile:hover{
+  width: 180%;
+  cursor: pointer;
+  margin-left: -130%;
+  margin-top: -60%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* horizontal scroll */
+.scroll-slider {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  }
+  .scroll-wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+  }
+  .scroll-slide {
+    flex: 1 0 75vw;
+    max-width: 75vw;
+    height: 100%;
+  }
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .timeline{
+    margin-left: 40%;
+}
+
+/* import exports toggle buttons */
+.nav-toggle{
+  background-color: #eee;
+  border: none;
+  color: black;
+  padding: 15px;
+  margin-left: 60px;
+  text-align: center;
+  text-decoration: none;
+  display:flex;
+  font-size: 16px;
+  }
+  .nav-toggle:hover{
+    color: #000;
+    background:#fff;
+    box-shadow: .1em .1em 3em rgba(100,100,100, 0.2);
+}
+
+/* exports */
+.export_label{
+  position: absolute;
+  margin-top: -23%;
+  margin-left: 73%;
+  }
+  #copper{
+    color: #ED1C24;
+  }
+  #refined{
+    color: #92278F;
+  }
+  #fillet{
+    color: #FBB040;
+  }
+  #sulfate{
+    color: #603A16;
+  }
+  #export_label{
+    position: absolute;
+    margin-top: -40%;
+    margin-left: 30%;
+  }
+  .exports{
+    position: absolute;
+    margin-top: -32.5%;
+    margin-left: 15.6%;
+}
+
+/* imports */
+.import_label{
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 15%;
+  text-align: right;
+  }
+  #cars{
+    color: #27AAE1;
+  }
+  #Petroleum{
+    color: #D7DF23;
+  }
+  #Crude{
+    color: #2E3192;
+  }
+  #Broadcasting{
+    color: #009444;
+  }
+  #import_label{
+    position: absolute;
+    margin-top: -40%;
+    margin-left: 60%;
+  }
+  .imports{
+    margin-top: -32.5%;
+    margin-left: 15.6%;
+}
+
+/* agricultural products */
+ul li {
+  background-color: white;
+  list-style: none;
+  float: left;
+  margin:10px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  background: #ededed;
+  border-radius: 50%;
+  position: relative;
+  top: 50%;
+  left: 15%;
+  transition: .5s ease-in-out;
+  z-index: 1;
+  color: #ededed;
+  }
+  ul li::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    z-index: -1;
+  }
+  ul li:hover::before {
+    transform: scale(.9);
+  }
+  ul li:hover {
+    color: black;
+  }
+  .agriculture_icon{
+    height: 35%;
+    margin: auto;
+    text-align: center;
+    margin-top: 30%;
+  }
+  #fish{
+    width: 35%;
+    margin: auto;
+    text-align: center;
+    margin-top: 40%;
+}
+
+/* timeline */
+.controls {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  }
+  .controls:hover:after {
+    transform: translateX(-10px) rotate(45deg);
+  }
+  .controls:hover:active:after {
+    transform: translateX(-20px) rotate(45deg);
+    transition: 300ms all;
+  }
+  .controls:after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+    transition: 500ms all;
+  }
+  .controls.next {
+    left: auto;
+    right: 120px;
+    transform: rotate(180deg);
+  }
+
+  .time-line {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+  }
+  .time-line * {
+    transition: 800ms all cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .time-line .dates-overflow {
+    left: 0;
+    width: 500vw;
+    position: absolute;
+    bottom: 50px;
+    height: 50px;
+  }
+  .time-line .dates-wrap {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    left: calc(50vw - 80px);
+  }
+  .time-line .dates-wrap:before, .time-line .dates-wrap:after {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 100%;
+    left: -1px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  .time-line .dates-wrap:after {
+    left: auto;
+    right: -1px;
+    transform: translate(50%, -50%);
+  }
+  .time-line .dates-wrap .date {
+    width: 160px;
+    position: relative;
+    float: left;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 800ms all cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .time-line .dates-wrap .date .date-content {
+    visibility: hidden;
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    bottom: 100%;
+    margin-bottom: 80px;
+    border-radius: 3px;
+    transform-origin: 50% 100%;
+    transform: scale(0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+  }
+  .time-line .dates-wrap .date .date-content:after {
+    content: " ";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    top: 100%;
+    margin-top: 8px;
+    height: 60px;
+    opacity: 0;
+    background-color: black;
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: 800ms all cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .time-line .dates-wrap .date .date-content .date-image {
+    height: calc(100% - 60px);
+    background-size: contain;
+    background-position: center;
+  }
+  .time-line .dates-wrap .date .date-content > div {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .time-line .dates-wrap .date .date-content .date-text {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  .time-line .dates-wrap .date .date-year {
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .time-line .dates-wrap .date .date-year:hover {
+    opacity: 1 !important;
+  }
+  .time-line .dates-wrap .date .date-year:hover:after {
+    transform: scale(1) !important;
+  }
+  .time-line .dates-wrap .date .date-year p {
+    position: absolute;
+    top: 0px;
+    color: black;
+    font-size: 25px;
+    font-weight:500;
+    transform: scale(0.4);
+    z-index: 2;
+  }
+  .time-line .dates-wrap .date .date-year:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 1px;
+    background-color: black;
+  }
+  .time-line .dates-wrap .date.active .date-year {
+    opacity: 1;
+  }
+  .time-line .dates-wrap .date.active .date-year :after {
+    transform: scale(1);
+  }
+  .time-line .dates-wrap .date.active .date-year p {
+    transform: scale(1.2);
+  }
+  .time-line .dates-wrap .date.active .date-content {
+    transform: scale(1);
+    visibility: visible;
+  }
+  .time-line .dates-wrap .date.active .date-content:after {
+    transition-delay: 200ms;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  .time-line .dates-wrap .date.active .date-content div {
+    transition-delay: 200ms;
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+}
